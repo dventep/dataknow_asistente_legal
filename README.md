@@ -34,6 +34,8 @@ Resultados
 ├── requirements.txt
 │
 ├── src
+│ ├── .streamlit
+│ │ ├── config.toml
 │ ├── app.py
 │ ├── retriever.py
 │ ├── copilot.py
@@ -61,22 +63,49 @@ Resultados
 # Instalación
 
 Clonar el repositorio:
+```
 git clone https://github.com/dventep/dataknow_asistente_legal.git
+```
 
 Instalar dependencias:
+```
 pip install -r requirements.txt
+```
 
 Crear archivo `.env` con las variables necesarias.
 
 ---
 
+# Preparación del índice de búsqueda
+
+Antes de ejecutar la aplicación es necesario indexar los documentos jurídicos en Azure AI Search.
+
+Este proceso:
+
+- Lee el dataset de sentencias almacenado en Azure Blob Storage
+- Genera embeddings utilizando Azure OpenAI
+- Crea el índice vectorial en Azure AI Search
+
+Ejecutar:
+```
+python src/index_data.py
+```
+
+Este proceso solo debe ejecutarse una vez o cuando se actualicen los datos.
+
+---
+
 # Ejecutar la aplicación
 
+Una vez indexados los documentos, se puede iniciar la interfaz conversacional.
+```
 streamlit run src/app.py
+```
 
 La aplicación estará disponible en:
-
+```
 http://localhost:8501
+```
 
 ---
 
