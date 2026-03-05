@@ -28,6 +28,7 @@ El sistema utiliza una arquitectura RAG combinando recuperación semántica y ge
 
 # Estructura del proyecto
 
+```
 Resultados
 │
 ├── requirements.txt
@@ -42,6 +43,7 @@ Resultados
 │ ├── search_indexer.py
 │ ├── blob_loader.py
 │ └── config.py
+```
 
 ---
 
