@@ -1,0 +1,10 @@
+pandas
+numpy
+streamlit
+openpyxl
+python-dotenv
+azure-storage-blob
+azure-search-documents
+langchain
+langchain-openai
+tiktoken
